@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+_site/
+
+# 注意：cache/ 跟 screener_report/ 故意「不」放進 .gitignore——
+# GitHub Actions 每次執行都是全新環境，需要靠 git commit 把這兩個資料夾的內容
+# 存回 repo，下次執行才能接著累積籌碼歷史（TDCC集保股權分散表等），
+# 詳見 .github/workflows/daily-screener.yml 說明。

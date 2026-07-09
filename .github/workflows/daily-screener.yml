@@ -1,0 +1,61 @@
+name: 每日選股報告自動更新 + 部署到 GitHub Pages
+
+# 觸發時機：
+#   1. 排程：週一~週五 台灣時間晚上6:30（收盤後、三大法人/融資資料通常已公布齊全）
+#      cron 是 UTC 時間，台灣是 UTC+8，所以 18:30 台灣時間 = 10:30 UTC
+#   2. 手動：GitHub repo 頁面 -> Actions -> 本workflow -> Run workflow，方便測試
+on:
+  schedule:
+    - cron: "30 10 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # 需要把當次抓到的 cache/ 與 screener_report/ 存回 repo，讓籌碼歷史能每天累積
+  pages: write       # 部署到 GitHub Pages
+  id-token: write    # GitHub Pages 部署動作需要
+
+jobs:
+  run-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 簽出 repo
+        uses: actions/checkout@v4
+
+      - name: 設定 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安裝套件
+        run: pip install -r requirements.txt
+
+      - name: 執行選股評分（正式模式，抓真實資料）
+        env:
+          FINMIND_API_TOKEN: ${{ secrets.FINMIND_API_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 screener_main.py
+
+      - name: 準備要發布的網站內容
+        run: |
+          mkdir -p _site
+          cp screener_report/report.html _site/index.html
+
+      - name: 把本次更新的資料/報告存回 repo（累積籌碼歷史，供隔天使用）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cache/ screener_report/
+          git commit -m "chore: 每日選股報告自動更新 $(date -u +'%Y-%m-%d')" || echo "沒有變動可提交"
+          git push
+
+      - name: 上傳 Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-07-05T16:42:42.439299",
+  "iterations": [
+    {
+      "iteration": 1,
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 6,
+        "min_samples_split": 20,
+        "threshold": 0.5,
+        "horizon": 5
+      },
+      "backend": "內建 NumPy RandomForest (sklearn 未安裝，已自動退回替代方案)",
+      "val_metrics": {
+        "n_obs": 107,
+        "n_trades": 2679,
+        "win_rate": 0.6326987681970885,
+        "total_return": 0.20751287249566475,
+        "annual_return": 0.5590735243296243,
+        "benchmark_total_return": -0.04459947517526219,
+        "benchmark_annual_return": -0.10188072500762857,
+        "excess_annual_return": 0.6609542493372529,
+        "sharpe": 32.834599008163714,
+        "max_drawdown": -0.000894454529595311,
+        "accuracy": 0.6936448598130841
+      }
+    }
+  ],
+  "n_stocks_used": 50,
+  "final": {
+    "chosen_params": {
+      "n_estimators": 100,
+      "max_depth": 6,
+      "min_samples_split": 20,
+      "threshold": 0.5,
+      "horizon": 5
+    },
+    "backend": "內建 NumPy RandomForest (sklearn 未安裝，已自動退回替代方案)",
+    "test_metrics": {
+      "n_obs": 108,
+      "n_trades": 3013,
+      "win_rate": 0.6518420179223365,
+      "total_return": 0.3011887980995376,
+      "annual_return": 0.8483919574561272,
+      "benchmark_total_return": 0.08184151442717313,
+      "benchmark_annual_return": 0.20147618519549226,
+      "excess_annual_return": 0.6469157722606349,
+      "sharpe": 49.2991372209068,
+      "max_drawdown": 0.0,
+      "accuracy": 0.682962962962963
+    },
+    "passed_threshold": true,
+    "finished_at": "2026-07-05T16:43:32.753954"
+  }
+}
