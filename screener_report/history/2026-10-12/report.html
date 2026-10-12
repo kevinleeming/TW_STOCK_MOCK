@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>台股選股評分報告</title>
+<style>
+  :root {
+    --bg: #0a0f1a;
+    --bg-gradient: radial-gradient(circle at 15% 0%, #10192e 0%, #0a0f1a 45%, #060a12 100%);
+    --panel: #121b2e;
+    --panel-alt: #0f1727;
+    --border: #223049;
+    --text: #dbe4f3;
+    --text-muted: #7e93b3;
+    --accent: #38bdf8;
+    --accent-2: #22d3ee;
+    --accent-warn: #f87171;
+    --tag-bg: #16283f;
+    --tag-text: #7dd3fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Microsoft JhengHei", "PingFang TC", sans-serif;
+    margin: 0; padding: 32px;
+    background: var(--bg-gradient);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    color: var(--accent-2);
+    margin-bottom: 4px;
+    text-shadow: 0 0 18px rgba(34, 211, 238, 0.25);
+  }
+  .meta { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: var(--panel);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    border-bottom: 1px solid var(--border);
+    padding: 10px 12px;
+    font-size: 13px;
+    vertical-align: top;
+    color: var(--text);
+  }
+  th {
+    background: linear-gradient(180deg, #17273f 0%, #101c30 100%);
+    color: var(--accent-2);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    position: sticky;
+    top: 0;
+  }
+  tr:nth-child(even) td { background: var(--panel-alt); }
+  tr:hover td { background: #17233a; }
+  .score-total {
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+  }
+  .industry-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid #234;
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  ul { margin: 0; padding-left: 18px; color: var(--text-muted); }
+  ul li { margin-bottom: 4px; }
+  .news-summary {
+    background: #0f2130;
+    border: 1px solid #1e3a52;
+    border-left: 3px solid var(--accent-2);
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 12.5px;
+    color: var(--text);
+  }
+  .news-links { margin: 6px 0 0; padding-left: 16px; }
+  .news-links li { margin-bottom: 2px; }
+  .news-links a { color: var(--accent); text-decoration: none; }
+  .news-links a:hover { text-decoration: underline; }
+  .disclaimer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+</style>
+</head>
+<body>
+  <h1>台股選股評分報告</h1>
+  <p class="meta">產出時間: 2026-10-12T21:13:03.100615</p>
+  <p class="meta">流動性門檻：近20日平均成交量 >= 300張，且平均成交金額 >= 20,000,000元（低於門檻已排除）</p>
+  <table>
+    <thead>
+      <tr>
+        <th>排名</th><th>代號</th><th>名稱</th><th>產業</th><th>市場</th><th>收盤價</th><th>近期均量(張)</th>
+        <th>總分</th><th>籌碼(50)</th><th>左側拉回(20)</th><th>布林(15)</th><th>葛蘭碧(15)</th><th>選股理由</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>1</td>
+          <td>2492</td>
+          <td>華新科</td>
+          <td><span class="industry-tag">電子工業</span></td>
+          <td>TWSE</td>
+          <td>418.00</td>
+          <td>36578</td>
+          <td class="score-total">68.0</td>
+          <td>45.0</td>
+          <td>14.0</td>
+          <td>6.0</td>
+          <td>3.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +5.56 個百分點</li><li>股東人數近2週變化 -9.01%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 17,450 張（約當期成交量 3.4%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近120個交易日內量增創高617.00元（76日前），目前拉回32.3%，尚未拉回到季線附近，歷史慣性拉回幅度中位數約17.5%</li><li>布林型態中性，無明顯訊號（帶寬53.3%, 型態=wide, 位置=upper, 開喇叭=是）</li><li>月線上揚但乖離率達24.4%，過度乖離 -> 葛蘭碧賣點③</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td>6770</td>
+          <td>力積電</td>
+          <td><span class="industry-tag">半導體業</span></td>
+          <td>TWSE</td>
+          <td>71.40</td>
+          <td>112236</td>
+          <td class="score-total">67.5</td>
+          <td>36.0</td>
+          <td>18.0</td>
+          <td>6.0</td>
+          <td>7.5</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +0.09 個百分點</li><li>股東人數近2週變化 -0.07%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 107,380 張（約當期成交量 6.8%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近120個交易日內量增創高88.70元（91日前），目前拉回19.5%，已拉回至季線附近或以下，歷史慣性拉回幅度中位數約20.1%</li><li>布林型態中性，無明顯訊號（帶寬12.3%, 型態=normal, 位置=middle, 開喇叭=否）</li><li>未明顯符合葛蘭碧買賣點規則</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td>2426</td>
+          <td>鼎元</td>
+          <td><span class="industry-tag">光電業</span></td>
+          <td>TWSE</td>
+          <td>100.50</td>
+          <td>36429</td>
+          <td class="score-total">64.0</td>
+          <td>42.0</td>
+          <td>0.0</td>
+          <td>10.1</td>
+          <td>12.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +3.78 個百分點</li><li>股東人數近2週變化 -2.52%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 4,181 張（約當期成交量 0.8%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>股價於布林上通道與月線之間震盪，符合多頭排列格局 -> 良好趨勢型態(範例3)（帶寬20.0%, 型態=wide, 位置=middle, 開喇叭=否）</li><li>月線上揚，股價拉回獲得月線支撐 -> 葛蘭碧買點②</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td>3481</td>
+          <td>群創</td>
+          <td><span class="industry-tag">光電業</span></td>
+          <td>TWSE</td>
+          <td>51.30</td>
+          <td>199447</td>
+          <td class="score-total">63.0</td>
+          <td>28.5</td>
+          <td>20.0</td>
+          <td>2.6</td>
+          <td>12.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +0.29 個百分點</li><li>股東人數近2週變化 -1.12%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計賣超 37,981 張（約當期成交量 -1.4%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近120個交易日內量增創高70.90元（73日前），目前拉回27.6%，已拉回至季線附近或以下，歷史慣性拉回幅度中位數約17.6%</li><li>布林剛開喇叭，但三大法人為賣超方向，屬於應避開的型態（準則h）（帶寬16.2%, 型態=normal, 位置=middle, 開喇叭=是）</li><li>月線上揚，股價拉回獲得月線支撐 -> 葛蘭碧買點②</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>5</td>
+          <td>3231</td>
+          <td>緯創</td>
+          <td><span class="industry-tag">電子工業</span></td>
+          <td>TWSE</td>
+          <td>189.50</td>
+          <td>38659</td>
+          <td class="score-total">60.5</td>
+          <td>33.0</td>
+          <td>14.0</td>
+          <td>6.0</td>
+          <td>7.5</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +0.11 個百分點</li><li>股東人數近2週變化 -1.32%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 15,995 張（約當期成交量 3.0%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近120個交易日內量增創高198.00元（23日前），目前拉回4.3%，已拉回至季線附近或以下，歷史慣性拉回幅度中位數約10.9%</li><li>布林型態中性，無明顯訊號（帶寬6.6%, 型態=normal, 位置=upper, 開喇叭=否）</li><li>未明顯符合葛蘭碧買賣點規則</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>6</td>
+          <td>1802</td>
+          <td>台玻</td>
+          <td><span class="industry-tag">玻璃陶瓷</span></td>
+          <td>TWSE</td>
+          <td>63.50</td>
+          <td>32754</td>
+          <td class="score-total">58.5</td>
+          <td>45.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>7.5</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +2.08 個百分點</li><li>股東人數近2週變化 -6.77%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 21,865 張（約當期成交量 4.8%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬15.7%, 型態=normal, 位置=upper, 開喇叭=是）</li><li>未明顯符合葛蘭碧買賣點規則</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>7</td>
+          <td>2609</td>
+          <td>陽明</td>
+          <td><span class="industry-tag">航運業</span></td>
+          <td>TWSE</td>
+          <td>63.60</td>
+          <td>30671</td>
+          <td class="score-total">57.5</td>
+          <td>36.0</td>
+          <td>8.0</td>
+          <td>6.0</td>
+          <td>7.5</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +0.25 個百分點</li><li>股東人數近2週變化 -0.73%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 44,890 張（約當期成交量 10.5%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近120個交易日內量增創高64.50元（32日前），目前拉回1.4%，尚未拉回到季線附近，歷史慣性拉回幅度中位數約32.7%</li><li>布林型態中性，無明顯訊號（帶寬8.9%, 型態=normal, 位置=upper, 開喇叭=否）</li><li>未明顯符合葛蘭碧買賣點規則</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>8</td>
+          <td>3532</td>
+          <td>台勝科</td>
+          <td><span class="industry-tag">半導體業</span></td>
+          <td>TWSE</td>
+          <td>485.50</td>
+          <td>8026</td>
+          <td class="score-total">57.5</td>
+          <td>36.0</td>
+          <td>8.0</td>
+          <td>6.0</td>
+          <td>7.5</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +0.45 個百分點</li><li>股東人數近2週變化 -2.38%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 545 張（約當期成交量 0.5%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近120個交易日內量增創高523.00元（60日前），目前拉回7.2%，尚未拉回到季線附近，歷史慣性拉回幅度中位數約29.0%</li><li>布林型態中性，無明顯訊號（帶寬26.1%, 型態=wide, 位置=middle, 開喇叭=否）</li><li>未明顯符合葛蘭碧買賣點規則</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>9</td>
+          <td>2340</td>
+          <td>台亞</td>
+          <td><span class="industry-tag">光電業</span></td>
+          <td>TWSE</td>
+          <td>51.40</td>
+          <td>21638</td>
+          <td class="score-total">54.0</td>
+          <td>45.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>3.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +5.88 個百分點</li><li>股東人數近2週變化 -2.69%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 34,026 張（約當期成交量 11.2%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬77.8%, 型態=wide, 位置=upper, 開喇叭=是）</li><li>月線上揚但乖離率達31.4%，過度乖離 -> 葛蘭碧賣點③</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>10</td>
+          <td>3189</td>
+          <td>景碩</td>
+          <td><span class="industry-tag">半導體業</span></td>
+          <td>TWSE</td>
+          <td>1060.00</td>
+          <td>18542</td>
+          <td class="score-total">54.0</td>
+          <td>45.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>3.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +2.10 個百分點</li><li>股東人數近2週變化 -12.48%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 31,426 張（約當期成交量 12.1%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬48.5%, 型態=wide, 位置=middle, 開喇叭=是）</li><li>月線上揚但乖離率達13.4%，過度乖離 -> 葛蘭碧賣點③</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>11</td>
+          <td>6278</td>
+          <td>台表科</td>
+          <td><span class="industry-tag">光電業</span></td>
+          <td>TWSE</td>
+          <td>272.50</td>
+          <td>9204</td>
+          <td class="score-total">54.0</td>
+          <td>45.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>3.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +3.00 個百分點</li><li>股東人數近2週變化 -6.46%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 15,472 張（約當期成交量 12.0%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬47.6%, 型態=wide, 位置=upper, 開喇叭=是）</li><li>月線上揚但乖離率達28.9%，過度乖離 -> 葛蘭碧賣點③</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>12</td>
+          <td>4958</td>
+          <td>臻鼎-KY</td>
+          <td><span class="industry-tag">電子工業</span></td>
+          <td>TWSE</td>
+          <td>581.00</td>
+          <td>32217</td>
+          <td class="score-total">54.0</td>
+          <td>45.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>3.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +3.05 個百分點</li><li>股東人數近2週變化 -14.27%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 16,652 張（約當期成交量 3.7%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬35.2%, 型態=wide, 位置=upper, 開喇叭=是）</li><li>月線上揚但乖離率達12.8%，過度乖離 -> 葛蘭碧賣點③</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>13</td>
+          <td>6456</td>
+          <td>GIS-KY</td>
+          <td><span class="industry-tag">電子工業</span></td>
+          <td>TWSE</td>
+          <td>102.00</td>
+          <td>18152</td>
+          <td class="score-total">54.0</td>
+          <td>45.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>3.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +6.63 個百分點</li><li>股東人數近2週變化 -6.54%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 17,312 張（約當期成交量 6.8%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬74.3%, 型態=wide, 位置=upper, 開喇叭=是）</li><li>月線上揚但乖離率達26.7%，過度乖離 -> 葛蘭碧賣點③</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>14</td>
+          <td>8150</td>
+          <td>南茂</td>
+          <td><span class="industry-tag">電子工業</span></td>
+          <td>TWSE</td>
+          <td>123.00</td>
+          <td>55110</td>
+          <td class="score-total">54.0</td>
+          <td>45.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>3.0</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +3.97 個百分點</li><li>股東人數近2週變化 -7.82%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 79,675 張（約當期成交量 10.3%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬60.9%, 型態=wide, 位置=middle, 開喇叭=是）</li><li>月線上揚但乖離率達15.1%，過度乖離 -> 葛蘭碧賣點③</li></ul></td>
+        </tr>
+        
+        <tr>
+          <td>15</td>
+          <td>2344</td>
+          <td>華邦電</td>
+          <td><span class="industry-tag">半導體業</span></td>
+          <td>TWSE</td>
+          <td>174.00</td>
+          <td>78738</td>
+          <td class="score-total">52.5</td>
+          <td>39.0</td>
+          <td>0.0</td>
+          <td>6.0</td>
+          <td>7.5</td>
+          <td><ul><li>千張大戶持股比例近2週變化 +1.14 個百分點</li><li>股東人數近2週變化 -3.83%（下降代表散戶籌碼流出、籌碼集中）</li><li>近14個交易日三大法人合計買超 63,232 張（約當期成交量 5.7%）</li><li>融資餘額資料不足，暫給中性分數</li><li>近期未出現「量增創高後拉回」型態，此項不適用</li><li>布林型態中性，無明顯訊號（帶寬14.2%, 型態=normal, 位置=middle, 開喇叭=否）</li><li>未明顯符合葛蘭碧買賣點規則</li></ul></td>
+        </tr>
+        
+    </tbody>
+  </table>
+  <p class="disclaimer">免責聲明：本評分模型僅供研究與教育用途，不構成投資建議。歷史籌碼與技術指標不保證未來股價表現。</p>
+</body>
+</html>
